@@ -17,6 +17,32 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def home():
     return render_template("home.html")
 
+@app.get("/about")
+def about():
+    return render_template("about.html")
+
+@app.get("/quizzes")
+def quizzes():
+
+    entries = [1,2,3]
+
+    return render_template("quizzes.html", entries=entries)
+
+@app.route("/quiz/<topic>/<question_num>", methods = ['POST', 'GET'])
+def quiz(topic, question_num):
+
+    if request.method == "POST":
+        pass
+
+    return render_template("quiz.html")
+
+@app.get("/result/<topic>")
+def result():
+
+    entries = [1,2,3]
+
+    return render_template("result.html", entries=entries)
+
 
 if __name__ == '__main__':
     from db import db
