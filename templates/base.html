@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar__brand">
+            <a href="/" class="navbar__link">
+                <img class="navbar__logo" src="/static/logo.svg" alt="logo" />
+            </a>
+        </div>
+        <ul class="navbar__navigation">
+            <li class="navbar__navigation-item">
+                <a href="/topics" class="navbar__link">Topics</a>
+            </li>
+            <li class="navbar__navigation-item">
+                <a href="/about" class="navbar__link">About</a>
+            </li>
+        </ul>
+    </header>
+    <main class="main">
+
+        {% block content %}{% endblock %}
+
+    </main>
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="left">
+                <a class="footer__item">Made by Liam M</a>
+            </section>
+            <section class="right">
+                <div class="footer__column">
+                    <a class="footer__item" href="/topics">Topics</a>
+                </div>
+                <div class="footer__column">
+                    <a class="footer__item" href="/about">About</a>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+
+</html>
