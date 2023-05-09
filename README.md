@@ -1,2 +1,3 @@
 # quiz-app
-A project implementing quiz functionality
+
+This is a practical learning project, simulating an online quiz app.

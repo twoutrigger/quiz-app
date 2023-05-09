@@ -1,0 +1,32 @@
+.main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text__header {
+    text-align: left;
+}
+
+.text__paragraph {
+    text-align: left;
+    color: #3a3939;
+}
+
+.text__link a {
+    text-align: left;
+    color: #013a4b;
+    text-decoration: none;
+}
+
+.text__link a:visited {
+    text-decoration: none;
+}
+
+.text__link a:hover {
+    text-decoration: underline;
+}
+
+.text__link a:active {
+    text-decoration: underline;
+}

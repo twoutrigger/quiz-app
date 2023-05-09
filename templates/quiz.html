@@ -1,3 +1,18 @@
 {% extends "base.html" %}
 
-{% block content %}{% endblock %}
+{% block content %}
+
+<section>
+    {% if question %}
+    <p> Question: {{ question }} </p>
+    {% else %}
+    <p> Something is False </p>
+    {% endif %}
+</section>
+<section>
+    {% for answer in answers %}
+    <input type="radio" name="options" id="option1" value="option1"> {{ answer }}</input><br>
+    {% endfor %}
+</section>
+
+{% endblock %}
