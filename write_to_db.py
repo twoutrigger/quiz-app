@@ -9,9 +9,9 @@ t_1 = TopicModel(
 
 # add questions:
 q_1 = QuestionModel(
-        topic_name = 'Test Topic',
-        question_num = 1,
         question = 'Test Question',
-        answers = [1, 2, 3],
-        answer_correct = 1
+        answers = ['1', '2', '3'],
+        answer_correct = '1',
+        topic_name = 'Test Topic',
+        question_num = 1
         )
