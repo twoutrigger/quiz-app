@@ -34,7 +34,11 @@ def quiz(topic, question_num):
     if request.method == "POST":
         pass
 
-    return render_template("quiz.html")
+    question = 'Test'
+    answers = [1, 2, 3]
+    answer_correct = 1
+
+    return render_template("quiz.html", question=question, answers=answers)
 
 @app.get("/result/<topic>")
 def result():
