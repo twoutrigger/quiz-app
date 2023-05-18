@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
+from models.topic import TopicModel
+from models.question import QuestionModel
 import os
 
 app = Flask(__name__)
@@ -24,9 +26,19 @@ def about():
 @app.get("/quizzes")
 def quizzes():
 
-    entries = [1,2,3]
+    # add start button for start a particular quiz
 
-    return render_template("quizzes.html", entries=entries)
+    topics = TopicModel.query.all()
+
+    entries_topics = [
+        (
+            entry.name,
+            entry.desc
+        )
+        for entry in topics
+    ]
+
+    return render_template("quizzes.html", entries_topics=entries_topics)
 
 @app.route("/quiz/<topic>/<question_num>", methods = ['POST', 'GET'])
 def quiz(topic, question_num):
@@ -38,7 +50,20 @@ def quiz(topic, question_num):
     answers = [1, 2, 3]
     answer_correct = 1
 
-    return render_template("quiz.html", question=question, answers=answers)
+    question_obj = QuestionModel.query.filter_by(topic_name=topic, question_num=question_num).first()
+
+    question = question_obj.question
+    # answers = "|".split(question_obj.answers)
+    answer_correct = question_obj.answer_correct
+
+    answer_response = 'Correct!'
+
+    # just do Next button
+    # add question_num_max
+
+    # need to initiate an object to tally score
+
+    return render_template("quiz.html", question=question, answers=answers, answer_response=answer_response)
 
 @app.get("/result/<topic>")
 def result():
