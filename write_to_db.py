@@ -23,7 +23,8 @@ q_x = QuestionModel(
         answers = ['1', '2', '3'],
         answer_correct = '1',
         topic_name = 'Test Topic',
-        question_num = 1
+        question_num = 1,
+        num_max = 3
         )
 
 q_1 = QuestionModel(
@@ -31,7 +32,8 @@ q_1 = QuestionModel(
         answers = "True|False",
         answer_correct = 'True',
         topic_name = 'Data Science',
-        question_num = 1
+        question_num = 1,
+        num_max = 3
         )
 
 q_2 = QuestionModel(
@@ -39,7 +41,8 @@ q_2 = QuestionModel(
         answers = "|",
         answer_correct = '',
         topic_name = 'Data Science',
-        question_num = 2
+        question_num = 2,
+        num_max = 3
         )
 
 q_3 = QuestionModel(
@@ -47,5 +50,6 @@ q_3 = QuestionModel(
         answers = "|",
         answer_correct = '',
         topic_name = 'Data Science',
-        question_num = 3
+        question_num = 3,
+        num_max = 3
         )
