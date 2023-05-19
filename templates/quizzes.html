@@ -1,3 +1,20 @@
 {% extends "base.html" %}
 
-{% block content %}{% endblock %}
+{% block content %}
+
+<div>
+
+    {% for topic in entries_topics %}
+
+        <section>
+            <!-- <h2 class="text__link"> <a href="{{ url_for('subject', subject_name=subject[0]) }}">{{ subject[0] }}</a> </h2>
+            <img class="image__thumbnail" src="/static/images/{{ subject[0] }}.jpg" alt="{{ subject[0] }} Image">
+            <hr class="thematic__break"> -->
+        </section>
+
+    {% endfor %}
+    
+
+</div>
+
+{% endblock %}
