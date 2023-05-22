@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 ## uncomment to add entries to db
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
 @app.get("/")
 def home():
