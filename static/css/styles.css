@@ -84,6 +84,12 @@ body {
     text-decoration: underline;
 }
 
+.thematic__break {
+    color: #175466;
+    background-color: #175466;
+    height: 3px;
+  }
+
 .footer {
     background-color: #175466;
     padding: 24px 0;

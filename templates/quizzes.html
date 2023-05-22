@@ -7,9 +7,10 @@
     {% for topic in entries_topics %}
 
         <section>
-            <!-- <h2 class="text__link"> <a href="{{ url_for('subject', subject_name=subject[0]) }}">{{ subject[0] }}</a> </h2>
-            <img class="image__thumbnail" src="/static/images/{{ subject[0] }}.jpg" alt="{{ subject[0] }} Image">
-            <hr class="thematic__break"> -->
+            <h2 class="text__link"> <a href="{{ url_for('quiz', topic=topic[0], question_num=1) }}">{{ topic[0] }}</a> </h2>
+            <p class="text__link"> <a href="{{ url_for('quiz', topic=topic[0], question_num=1) }}">{{ topic[1] }}</a> </p>
+            <br>
+            <hr class="thematic__break">
         </section>
 
     {% endfor %}
