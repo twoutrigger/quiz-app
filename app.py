@@ -53,7 +53,7 @@ def quiz(topic, question_num):
     question_obj = QuestionModel.query.filter_by(topic_name=topic, question_num=question_num).first()
 
     question = question_obj.question
-    # answers = "|".split(question_obj.answers)
+    answers = question_obj.answers.split("|")
     answer_correct = question_obj.answer_correct
 
     answer_response = 'Correct!'
