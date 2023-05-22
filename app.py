@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from models.topic import TopicModel
 from models.question import QuestionModel
+from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
@@ -14,6 +15,9 @@ if uri.startswith("postgres://"):
 
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+## uncomment to add entries to db
+db = SQLAlchemy(app)
 
 @app.get("/")
 def home():

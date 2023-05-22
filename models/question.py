@@ -5,17 +5,19 @@ class QuestionModel(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(240))
-    answers = db.Column(db.String(240)) # change to blob type, or string + split
+    answers = db.Column(db.String(240))
     answer_correct = db.Column(db.String(80))
     topic_name = db.Column(db.String(80))
     question_num = db.Column(db.Integer)
+    question_max = db.Column(db.Integer)
 
-    def __init__(self, question, answers, answer_correct, topic_name, question_num):
+    def __init__(self, question, answers, answer_correct, topic_name, question_num, question_max):
         self.question = question
         self.answers = answers
         self.answer_correct = answer_correct
         self.topic_name = topic_name
         self.question_num = question_num
+        self.question_max = question_max
 
     def save_to_db(self):
         db.session.add(self)
