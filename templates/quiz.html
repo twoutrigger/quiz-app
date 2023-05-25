@@ -15,6 +15,14 @@
     {% endfor %}
 </section>
 <br>
+<section>
+    {% if answer_response %}
+    <p> {{ answer_response }} </p>
+    {% else %}
+    <p> Something is False </p>
+    {% endif %}
+</section>
+<br>
 <div class="button__multichoice">
     <section class="left">
         <form class="form" method="POST">

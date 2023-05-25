@@ -48,11 +48,15 @@ def quizzes():
 def quiz(topic, question_num):
 
     if request.method == "POST":
-        pass
 
-    question = 'Test'
-    answers = [1, 2, 3]
-    answer_correct = 1
+        print(request.form.keys())
+        # print(request.form['submit_answer'])
+        # print(request.form['submit_next'])
+
+        answer_response = 'Correct!'
+
+        # return render_template("quiz.html", question=question, answers=answers, answer_response=answer_response)
+        # return redirect(url_for('video', course_name=course_name, video_num=video_num))
 
     question_obj = QuestionModel.query.filter_by(topic_name=topic, question_num=question_num).first()
 
@@ -60,10 +64,7 @@ def quiz(topic, question_num):
     answers = question_obj.answers.split("|")
     answer_correct = question_obj.answer_correct
 
-    answer_response = 'Correct!'
-
-    # just do Next button
-    # add question_num_max
+    answer_response = ''
 
     # need to initiate an object to tally score
 
