@@ -14,5 +14,20 @@
     <input type="radio" name="options" id="option1" value="option1"> {{ answer }}</input><br>
     {% endfor %}
 </section>
+<br>
+<div class="button__multichoice">
+    <section class="left">
+        <form class="form" method="POST">
+            <button class="button__submit" type="submit" name="submit_answer" value="center">Submit Answer</button>
+        </form>
+    </section>
+    <section class="center">
+        <form class="form" method="POST">
+            <button class="button__next" type="submit" name="submit_next" value="next">Next Question</button>
+        </form>
+    </section>
+    <section class="right">
+    </section>
+</div>
 
 {% endblock %}
