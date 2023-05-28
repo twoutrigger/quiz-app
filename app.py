@@ -49,9 +49,14 @@ def quiz(topic, question_num):
 
     if request.method == "POST":
 
-        print(request.form.keys())
-        # print(request.form['submit_answer'])
-        # print(request.form['submit_next'])
+        movement = request.form['submit_movement']
+
+        if movement == 'submit':
+            pass
+        else:
+            pass
+
+        # double check how to update page without refreshing page
 
         answer_response = 'Correct!'
 
