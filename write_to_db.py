@@ -24,7 +24,7 @@ q_x = QuestionModel(
         answer_correct = '1',
         topic_name = 'Test Topic',
         question_num = 1,
-        num_max = 3
+        question_max = 3
         )
 
 q_1 = QuestionModel(
@@ -37,9 +37,9 @@ q_1 = QuestionModel(
         )
 
 q_2 = QuestionModel(
-        question = '',
-        answers = "|",
-        answer_correct = '',
+        question = 'K Nearest Neighbors is a common supervised learning algorithm.',
+        answers = "True|False",
+        answer_correct = 'False',
         topic_name = 'Data Science',
         question_num = 2,
         question_max = 3

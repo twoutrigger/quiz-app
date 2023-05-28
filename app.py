@@ -47,25 +47,8 @@ def quizzes():
 @app.route("/quiz/<topic>/<question_num>", methods = ['POST', 'GET'])
 def quiz(topic, question_num):
 
-    if request.method == "POST":
-
-        movement = request.form['submit_movement']
-
-        if movement == 'submit':
-            pass
-
-        else:
-            if question_num < question_max:
-
-                redirect(url_for('quiz', topic=topic, question_num=question_num + 1))
-
-            else:
-
-                redirect(url_for('result', topic=topic))
-
-        # double check how to update page without refreshing page
-
-        answer_response = 'Correct!'
+    topic = topic
+    question_num = int(question_num)
 
     question_obj = QuestionModel.query.filter_by(topic_name=topic, question_num=question_num).first()
 
@@ -77,6 +60,29 @@ def quiz(topic, question_num):
     answer_response = ''
 
     # need to initiate an object to tally score
+
+    if request.method == "POST":
+
+        movement = request.form['submit_movement']
+
+        if movement == 'submit':
+            pass
+
+        else:
+            if question_num < question_max:
+
+                print(f'topic: {topic} | question_num: {question_num} | question_max: {question_max}')
+
+                redirect(url_for('quiz', topic=topic, question_num=(question_num + 1)))
+                # redirect(url_for('quiz', topic=topic, question_num=2))
+
+            else:
+
+                redirect(url_for('result', topic=topic))
+
+        # double check how to update page without refreshing page
+
+        answer_response = 'Correct!'
 
     return render_template("quiz.html", question=question, answers=answers, answer_response=answer_response)
 
