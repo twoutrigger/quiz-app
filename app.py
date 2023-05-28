@@ -53,21 +53,26 @@ def quiz(topic, question_num):
 
         if movement == 'submit':
             pass
+
         else:
-            pass
+            if question_num < question_max:
+
+                redirect(url_for('quiz', topic=topic, question_num=question_num + 1))
+
+            else:
+
+                redirect(url_for('result', topic=topic))
 
         # double check how to update page without refreshing page
 
         answer_response = 'Correct!'
-
-        # return render_template("quiz.html", question=question, answers=answers, answer_response=answer_response)
-        # return redirect(url_for('video', course_name=course_name, video_num=video_num))
 
     question_obj = QuestionModel.query.filter_by(topic_name=topic, question_num=question_num).first()
 
     question = question_obj.question
     answers = question_obj.answers.split("|")
     answer_correct = question_obj.answer_correct
+    question_max = question_obj.question_max
 
     answer_response = ''
 
@@ -76,7 +81,7 @@ def quiz(topic, question_num):
     return render_template("quiz.html", question=question, answers=answers, answer_response=answer_response)
 
 @app.get("/result/<topic>")
-def result():
+def result(topic):
 
     entries = [1,2,3]
 
