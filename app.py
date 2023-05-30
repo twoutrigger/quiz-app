@@ -65,6 +65,11 @@ def quiz(topic, question_num):
 
         movement = request.form['submit_movement']
 
+        print(movement)
+
+        test = request.form.getlist('options')
+        print(test)
+
         if movement == 'submit':
             
             answer_response = 'Correct!'
@@ -72,7 +77,7 @@ def quiz(topic, question_num):
         else:
             if question_num < question_max:
 
-                print(f'topic: {topic} | question_num: {question_num} | question_max: {question_max}')
+                # print(f'topic: {topic} | question_num: {question_num} | question_max: {question_max}')
 
                 return redirect(url_for('quiz', topic=topic, question_num=(question_num + 1)))
 

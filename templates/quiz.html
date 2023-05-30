@@ -9,9 +9,10 @@
     <p> Something is False </p>
     {% endif %}
 </section>
+<form class="form" method="POST">
 <section>
     {% for answer in answers %}
-    <input type="radio" name="options" id="option1" value="option1"> {{ answer }}</input><br>
+        <input type="radio" name="options" value=" {{ answer }}"> {{ answer }}</input><br>
     {% endfor %}
 </section>
 <br>
@@ -25,17 +26,14 @@
 <br>
 <div class="button__multichoice">
     <section class="left">
-        <form class="form" method="POST">
             <button class="button__submit" type="submit" name="submit_movement" value="submit">Submit Answer</button>
-        </form>
     </section>
     <section class="center">
-        <form class="form" method="POST">
             <button class="button__next" type="submit" name="submit_movement" value="next">Next Question</button>
-        </form>
     </section>
     <section class="right">
     </section>
 </div>
+</form>
 
 {% endblock %}
