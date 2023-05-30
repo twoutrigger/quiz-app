@@ -58,9 +58,6 @@ def quiz(topic, question_num):
     answer_response = ''
 
     global tally
-    # tally = []
-
-    # need to initiate an object to tally score
 
     if request.method == "POST":
 
