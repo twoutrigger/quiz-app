@@ -1,3 +1,14 @@
 {% extends "base.html" %}
 
-{% block content %}{% endblock %}
+{% block content %}
+
+<div>
+    <section>
+        <h1 class="text__header">Results for {{ topic }}:</h1>
+    </section>
+    <section>
+        <p class="text__paragraph">Your score is {{ result }}</p>
+    </section>
+</div>
+
+{% endblock %}

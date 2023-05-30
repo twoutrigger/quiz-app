@@ -16,6 +16,9 @@ if uri.startswith("postgres://"):
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# initiate tally variable to keep track
+tally = []
+
 ## uncomment to add entries to db
 # db = SQLAlchemy(app)
 
@@ -29,8 +32,6 @@ def about():
 
 @app.get("/quizzes")
 def quizzes():
-
-    # add start button for start a particular quiz
 
     topics = TopicModel.query.all()
 
@@ -69,12 +70,20 @@ def quiz(topic, question_num):
 
             answer_selection = request.form.get('options')
 
+            if question_num == 1:
+
+                tally = []
+
             if answer_selection == answer_correct:
             
                 answer_response = 'Correct!'
 
+                tally.append(1)
+
             else:
                 answer_response = 'Incorrect!'
+
+                tally.append(0)
 
         else:
 
@@ -88,18 +97,15 @@ def quiz(topic, question_num):
 
                 return redirect(url_for('result', topic=topic))
 
-        # double check how to update page without refreshing page
-
-        # answer_response = ''
-
     return render_template("quiz.html", question=question, answers=answers, answer_response=answer_response)
 
 @app.get("/result/<topic>")
 def result(topic):
 
-    entries = [1,2,3]
+    result = sum(tally) / len(tally)
+    result = f"{result:.0%}"
 
-    return render_template("result.html", entries=entries)
+    return render_template("result.html", topic=topic, result=result)
 
 
 if __name__ == '__main__':
