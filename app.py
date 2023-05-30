@@ -66,23 +66,23 @@ def quiz(topic, question_num):
         movement = request.form['submit_movement']
 
         if movement == 'submit':
-            pass
+            
+            answer_response = 'Correct!'
 
         else:
             if question_num < question_max:
 
                 print(f'topic: {topic} | question_num: {question_num} | question_max: {question_max}')
 
-                redirect(url_for('quiz', topic=topic, question_num=(question_num + 1)))
-                # redirect(url_for('quiz', topic=topic, question_num=2))
+                return redirect(url_for('quiz', topic=topic, question_num=(question_num + 1)))
 
             else:
 
-                redirect(url_for('result', topic=topic))
+                return redirect(url_for('result', topic=topic))
 
         # double check how to update page without refreshing page
 
-        answer_response = 'Correct!'
+        # answer_response = ''
 
     return render_template("quiz.html", question=question, answers=answers, answer_response=answer_response)
 
