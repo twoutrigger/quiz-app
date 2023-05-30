@@ -16,9 +16,6 @@ if uri.startswith("postgres://"):
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# initiate tally variable to keep track
-tally = []
-
 ## uncomment to add entries to db
 # db = SQLAlchemy(app)
 
@@ -60,6 +57,9 @@ def quiz(topic, question_num):
 
     answer_response = ''
 
+    global tally
+    # tally = []
+
     # need to initiate an object to tally score
 
     if request.method == "POST":
@@ -88,8 +88,6 @@ def quiz(topic, question_num):
         else:
 
             if question_num < question_max:
-
-                # print(f'topic: {topic} | question_num: {question_num} | question_max: {question_max}')
 
                 return redirect(url_for('quiz', topic=topic, question_num=(question_num + 1)))
 
