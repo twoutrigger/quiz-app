@@ -12,15 +12,15 @@
 <form class="form" method="POST">
 <section>
     {% for answer in answers %}
-        <input type="radio" name="options" value=" {{ answer }}"> {{ answer }}</input><br>
+        <input type="radio" name="options" value="{{ answer }}"> {{ answer }}</input><br>
     {% endfor %}
 </section>
 <br>
 <section>
     {% if answer_response %}
-    <p> {{ answer_response }} </p>
+    <p><b> {{ answer_response }} </b></p>
     {% else %}
-    <p> Something is False </p>
+    <p><br></p>
     {% endif %}
 </section>
 <br>

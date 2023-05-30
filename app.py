@@ -65,16 +65,19 @@ def quiz(topic, question_num):
 
         movement = request.form['submit_movement']
 
-        print(movement)
-
-        test = request.form.getlist('options')
-        print(test)
-
         if movement == 'submit':
+
+            answer_selection = request.form.get('options')
+
+            if answer_selection == answer_correct:
             
-            answer_response = 'Correct!'
+                answer_response = 'Correct!'
+
+            else:
+                answer_response = 'Incorrect!'
 
         else:
+
             if question_num < question_max:
 
                 # print(f'topic: {topic} | question_num: {question_num} | question_max: {question_max}')
