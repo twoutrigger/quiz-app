@@ -1,0 +1,38 @@
+SELECT id,
+       question,
+       answers,
+       answer_correct,
+       topic_name,
+       question_num,
+       question_max
+  FROM question;
+
+/*update question 
+set question = "The Confusion Matrix is useful for evaluating a classification algorithm."
+where
+id = 1*/
+
+/*update question 
+set question = "K-Means is a common ________ learning algorithm.",
+    answers = "supervised|unsupervised",
+    answer_correct = "unsupervised"
+where
+id = 2*/
+
+/*update question 
+set question = "Logistic Regression uses the ________ function for separation.",
+    answers = "Tanh|ReLU|Sigmoid",
+    answer_correct = "Sigmoid"
+where
+id = 3*/
+
+/*insert into question (id, question, answers, answer_correct, topic_name, question_num, question_max)
+values (4, "Gradient Boosting is not a form of ensemble learning.", "True|False", "False", "Data Science", 4, 3);*/
+
+/*update question 
+set question_max = 4*/
+
+/*update question 
+set question = "Gradient Boosting is NOT a form of ensemble learning."
+where
+id = 4*/

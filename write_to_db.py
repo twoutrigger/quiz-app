@@ -18,47 +18,38 @@ t_3 = TopicModel(
         )
 
 # add questions:
-q_x = QuestionModel(
-        question = 'Test Question',
-        answers = ['1', '2', '3'],
-        answer_correct = '1',
-        topic_name = 'Test Topic',
-        question_num = 1,
-        question_max = 3
-        )
-
 q_1 = QuestionModel(
-        question = 'Is Confusion Matrix useful for classification?',
+        question = 'The Confusion Matrix is useful for evaluating a classification algorithm.',
         answers = "True|False",
         answer_correct = 'True',
         topic_name = 'Data Science',
         question_num = 1,
-        question_max = 3
+        question_max = 4
         )
 
 q_2 = QuestionModel(
-        question = 'K Nearest Neighbors is a common supervised learning algorithm.',
-        answers = "True|False",
-        answer_correct = 'False',
+        question = 'K-Means is a common ________ learning algorithm.',
+        answers = "supervised|unsupervised",
+        answer_correct = 'unsupervised',
         topic_name = 'Data Science',
         question_num = 2,
-        question_max = 3
+        question_max = 4
         )
 
 q_3 = QuestionModel(
-        question = 'Logistic Regression uses the Sigmoid function for separation.',
-        answers = "True|False",
-        answer_correct = 'True',
+        question = 'Logistic Regression uses the ________ function for separation.',
+        answers = "Tanh|ReLU|Sigmoid",
+        answer_correct = 'Sigmoid',
         topic_name = 'Data Science',
         question_num = 3,
-        question_max = 3
+        question_max = 4
         )
 
-q_x = QuestionModel(
-        question = '',
-        answers = "|",
-        answer_correct = '',
+q_4 = QuestionModel(
+        question = 'Gradient Boosting is NOT a form of ensemble learning.',
+        answers = "True|False",
+        answer_correct = 'False',
         topic_name = 'Data Science',
         question_num = 0,
-        question_max = 3
+        question_max = 4
         )
