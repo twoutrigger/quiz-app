@@ -17,8 +17,10 @@
 </section>
 <br>
 <section>
-    {% if answer_response %}
-    <p class="text__paragraph"><b> {{ answer_response }} </b></p>
+    {% if answer_response == 'Correct!' %}
+    <p class="text__paragraph" style="color:green;"><b> {{ answer_response }} </b></p>
+    {% elif answer_response == 'Incorrect!' %}
+    <p class="text__paragraph" style="color:red;"><b> {{ answer_response }} </b></p>
     {% else %}
     <p class="text__paragraph"><br></p>
     {% endif %}
