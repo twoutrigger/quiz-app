@@ -63,6 +63,7 @@ body {
 
 .text__paragraph {
     text-align: left;
+    font-size: 16px;
     color: #3a3939;
 }
 
@@ -120,8 +121,8 @@ body {
     background-color: #5e5597;
     margin: 0 auto;
     border: 2px solid black;
-    font-size: 12px;
-    width: 160px;
+    font-size: 14px;
+    width: 172px;
     font-weight: bold;
     padding: 5px 30px;
     border-radius: 7px;
@@ -133,13 +134,18 @@ body {
     background-color: #175466;
     margin: 0 auto;
     border: 2px solid black;
-    font-size: 12px;
-    width: 160px;
+    font-size: 14px;
+    width: 172px;
     font-weight: bold;
     padding: 5px 30px;
     border-radius: 7px;
     color: white;
     cursor: pointer;
+}
+
+.radio__options {
+    font-size: 16px;
+    color: #3a3939;
 }
 
 .footer {

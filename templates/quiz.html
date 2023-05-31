@@ -4,23 +4,23 @@
 
 <section>
     {% if question %}
-    <p> Question: {{ question }} </p>
+    <p class="text__paragraph"> Question: {{ question }} </p>
     {% else %}
-    <p> Something is False </p>
+    <p> Something went wrong! </p>
     {% endif %}
 </section>
 <form class="form" method="POST">
 <section>
     {% for answer in answers %}
-        <input type="radio" name="options" value="{{ answer }}"> {{ answer }}</input><br>
+        <input type="radio" name="options" value="{{ answer }}"><nobr class="radio__options"> {{ answer }} </nobr></input><br>
     {% endfor %}
 </section>
 <br>
 <section>
     {% if answer_response %}
-    <p><b> {{ answer_response }} </b></p>
+    <p class="text__paragraph"><b> {{ answer_response }} </b></p>
     {% else %}
-    <p><br></p>
+    <p class="text__paragraph"><br></p>
     {% endif %}
 </section>
 <br>

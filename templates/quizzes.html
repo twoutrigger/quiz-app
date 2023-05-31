@@ -7,7 +7,7 @@
     {% for topic in entries_topics %}
 
         <section>
-            <h2 class="text__link"> <a href="{{ url_for('quiz', topic=topic[0], question_num=1) }}">{{ topic[0] }}</a> </h2>
+            <h1 class="text__link"> <a href="{{ url_for('quiz', topic=topic[0], question_num=1) }}">{{ topic[0] }}</a> </h1>
             <p class="text__link"> <a href="{{ url_for('quiz', topic=topic[0], question_num=1) }}">{{ topic[1] }}</a> </p>
             <br>
             <hr class="thematic__break">
