@@ -18,11 +18,11 @@
 <br>
 <section>
     {% if answer_response == 'Correct!' %}
-    <p class="text__paragraph" style="color:green;"><b> {{ answer_response }} </b></p>
+    <p class="text__response" style="color:green;"><b> {{ answer_response }} </b></p>
     {% elif answer_response == 'Incorrect!' %}
-    <p class="text__paragraph" style="color:red;"><b> {{ answer_response }} </b></p>
+    <p class="text__response" style="color:red;"><b> {{ answer_response }} </b></p>
     {% else %}
-    <p class="text__paragraph"><br></p>
+    <p class="text__response"><br></p>
     {% endif %}
 </section>
 <br>

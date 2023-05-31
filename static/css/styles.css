@@ -67,6 +67,11 @@ body {
     color: #3a3939;
 }
 
+.text__response {
+    text-align: left;
+    font-size: 16px;
+}
+
 .text__link a {
     text-align: left;
     color: #013a4b;
